@@ -4,6 +4,6 @@ export default class Validator {
     }
 
     validateUsername() {
-        return /[a-z]+[\d{0,3}a-z-_]*[a-z]+$/i.test(this.name);
+        return (/^[^\d-_][\w-]+[^\d-_]$/.test(this.name)) && !(/\d{4,}/.test(this.name));
     }
 }
